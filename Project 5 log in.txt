@@ -1,26 +1,13 @@
-#With the server language of your choice, create an authentication API that does the following.
-1. Takes a login and password
-2. Checks against a list (either in a database, or saved in a text file) whether than login and
-password is valid
-3. The passwords in the list cannot be readable for a person. Any form of basic encryption
-is acceptable
-4. Before checking if the username is within the database, the API will check if the log in
-begins with the 2 letter country code of the login location. For example, if the login
-comes from Singapore, a user name like sggalvin will be acceptable,
-5. A different response should be returned for a username that does not meet the 2 letter
-country code criteria#
-
-logincode = {'username password and location':223,'username password no location':113,'username':111 }
+login_database = {'username password and location': 223, 'username password no location': 113, 'username': 111}
 
 while True:
-    
-    request = int(input("what is your logincode? "))
-    
+    request = int(input("Enter your login code: "))
+
     if request == 223:
-        print ("welcome!")
-    
+        print("Welcome! Authentication successful.")
+
     elif request == 113:
-        print('password and location missing')
-        
+        print('Password and location missing. Please provide complete information.')
+
     else:
-        print('hmm...something is missing.')
+        print('Hmm...something is missing. Invalid login code.')
